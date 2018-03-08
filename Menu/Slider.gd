@@ -60,7 +60,7 @@ func resize():
 	$Foreground.rect_position = Vector2(margin, margin)
 	var text = TranslationServer.translate(text_id) + ": " + str(value_range[1]) + text_trailing
 	$Label.get_font("font").size = int($Foreground.rect_size.y * 0.75)
-	var text_size = $Label.get_font("font").get_string_size($Label.text)
+	var text_size = $Label.get_font("font").get_string_size(text)
 	if text_size.y > $Foreground.rect_size.y || text_size.x > $Foreground.rect_size.x / 2 - 4 * margin:
 		$Label.get_font("font").size = int(min($Foreground.rect_size.y / text_size.y, ($Foreground.rect_size.x / 2 - 4 * margin) / text_size.x) * $Label.get_font("font").size)
 	$Label.rect_size = Vector2(0, 0)
