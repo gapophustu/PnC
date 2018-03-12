@@ -7,7 +7,6 @@ var watchable = true
 var parent_id = ""
 
 func _ready():
-	add_to_group("pausables")
 	add_to_group("interactables")
 	add_to_group("inputable")
 	z_index = 305

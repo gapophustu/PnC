@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Global.gd" type="Script" id=1]
 
-[node name="Global" type="Control"]
+[node name="Global" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0

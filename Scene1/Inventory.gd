@@ -8,6 +8,7 @@ const margin_right = 72
 var open = false
 var new_scale = 1
 var inside = false
+var paused = false
 
 func _ready():
 	add_to_group("pausables")
@@ -18,6 +19,9 @@ func _ready():
 	modulate.a = 0
 	resize()
 	position.y = round(-$Background.texture.get_size().x * new_scale)
+
+func pause(pause):
+	paused = pause
 
 func return_state():
 	var state = {}
@@ -31,7 +35,8 @@ func resize():
 	position.x = (window_size.x - $Background.texture.get_size().x * new_scale) / 2
 
 func _physics_process(delta):
-	place_inventory()
+	if ! paused:
+		place_inventory()
 
 func place_inventory():
 	if open && position.y < 0:

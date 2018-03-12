@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Messages.gd" type="Script" id=1]
 [ext_resource path="res://BlackOpsOne-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scene1/audio/WATCHSTAR_1_de.ogg" type="AudioStream" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -11,7 +12,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Messages" type="Node2D"]
+[node name="Messages" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -36,5 +37,15 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="StarMessage" index="0"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+autoplay = false
+max_distance = 61120.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

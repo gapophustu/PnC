@@ -12,6 +12,7 @@ var base
 var scene_id = ""
 var scene
 var cursor_busy = false
+var volume = {}
 
 #list of supported input types
 var input_types = ["default", "one_click"]
@@ -53,12 +54,13 @@ func _ready():
 		TranslationServer.set_locale("de")
 	else:
 		TranslationServer.set_locale("en")
-	load_config()
+	global.load_config()
+	global.calculate_volumes()
 	add_to_group("game_state")
 	add_to_group("inputable")
 	set_physics_process(true)
 	set_process_input(true)
-	resize()
+	global.resize()
 
 func load_config():
 	var config_file = File.new()
@@ -384,8 +386,11 @@ func check_input():
 	if global.which_input != which:
 		global.which_input = which
 
-func _on_menu_closed():
-	global.check_input()
+func calculate_volumes():
+	global.volume["language"] = global.convert_volume(global.config.volume_language * global.config.volume_master)
+	global.volume["music"] = global.convert_volume(global.config.volume_music * global.config.volume_master)
+	global.volume["background"] = global.convert_volume(global.config.volume_background * global.config.volume_master)
+	global.volume["video"] = global.convert_volume(global.config.volume_video * global.config.volume_master)
 
-func _on_menu_opened():
-	global.which_input = ["menu", -2]
+func convert_volume(factor):
+	return 8.68588963807 * log(factor)

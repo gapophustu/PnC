@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/WATCHSTAR_1_de.ogg-e8556be9c7da95a6f02dcb23f7c3c5ec.oggstr"
+
+[deps]
+
+source_file="res://Scene1/audio/WATCHSTAR_1_de.ogg"
+source_md5="994104560d03adc265e3f697a53af682"
+
+dest_files=[ "res://.import/WATCHSTAR_1_de.ogg-e8556be9c7da95a6f02dcb23f7c3c5ec.oggstr" ]
+dest_md5="2a4fdba9ba677a13d9ed817ef6533ae3"
+
+[params]
+
+loop=true
+loop_offset=0

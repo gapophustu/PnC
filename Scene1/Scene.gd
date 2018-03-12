@@ -9,6 +9,7 @@ var move_direction_x = "none"
 var move_direction_y = "none"
 var scene_offset = Vector2(0, 0)
 var max_offset = Vector2(0, 0)
+var paused = false
 
 var messages_load = preload("./Messages.tscn")
 var messages = messages_load.instance()
@@ -36,6 +37,9 @@ func _ready():
 	$Background.add_child(tree)
 	add_child(messages)
 	add_child(inventory)
+
+func pause(pause):
+	paused = pause
 
 func check_inside():
 	return [id, 0]

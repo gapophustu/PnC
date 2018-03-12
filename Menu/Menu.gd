@@ -142,13 +142,14 @@ func place_menu():
 		modulate.a = min(modulate.a, 1)
 		if modulate.a > 0 && position != Vector2(0, 0):
 			position = Vector2(0, 0)
-			global._on_menu_opened()
+			get_tree().call_group("pausables", "pause", true)
 	elif ! open && modulate.a > 0:
 		modulate.a -= 0.03
 		modulate.a = max(modulate.a, 0)
 		if modulate.a == 0:
 			position = OS.get_window_size()
-			global._on_menu_closed()
+			global.check_input()
+			get_tree().call_group("pausables", "pause", false)
 
 func _on_continue_pressed():
 	if global.scene_id == "":

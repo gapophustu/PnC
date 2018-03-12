@@ -66,7 +66,7 @@ func _ready():
 	master_vol.text_id = "MENU_SOUND_MASTER"
 	master_vol.z_index = z_index + 1
 	master_vol.text_trailing = "%"
-	master_vol.value_range = [0, 100]
+	master_vol.value_range = [0, 200]
 	master_vol.value = round(global.config.volume_master * 100)
 	master_vol.connect("changed", self, "_on_changed")
 	add_child(master_vol)
@@ -134,6 +134,7 @@ func _on_changed(value = 0):
 	global.config.volume_video = video_vol.value / 100
 	global.config.volume_master = master_vol.value / 100
 	global.write_config()
+	global.calculate_volumes()
 
 func _on_language_pressed():
 	var languages = global.languages_sound.keys()

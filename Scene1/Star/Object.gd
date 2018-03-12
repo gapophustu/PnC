@@ -5,6 +5,7 @@ const id = "star"
 var count = 0
 var interactable = true
 var watchable = true
+var paused = false
 
 func _ready():
 	add_to_group("pausables")
@@ -20,6 +21,9 @@ func _ready():
 	position = Vector2(1300, 900)
 	z_index = 97
 	$Sprite/Highlight.modulate.a = 0
+
+func pause(pause):
+	paused = pause
 
 func return_state():
 	var state = {
