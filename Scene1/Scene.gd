@@ -23,7 +23,10 @@ var star = star_load.instance()
 var tree_load = preload("./Tree/StaticObject.tscn")
 var tree = tree_load.instance()
 
+var pos_player = Vector2(1000, 1000)
+
 func _ready():
+	make_navigation_polygon()
 	add_to_group("pausables")
 	add_to_group("interactables")
 	add_to_group("resizes")
@@ -142,6 +145,15 @@ func draw_scene():
 func transfor_coordinates(pos):
 	return pos * $Background.scale + scene_offset
 
+func make_navigation_polygon():
+	var config = ConfigFile.new()
+	config.load("res://images/backgrounds/Background1.cfg")
+	for i in config.get_section_keys("paths"):
+		$Navigation2D/NavigationPolygonInstance.navpoly.add_outline(config.get_value("paths", i))
+	$Navigation2D/NavigationPolygonInstance.navpoly.make_polygons_from_outlines()
+	$Navigation2D/NavigationPolygonInstance.enabled = false
+	$Navigation2D/NavigationPolygonInstance.enabled = true
+
 func cursor_menu(parent_id):
 	cursor_menu = cursor_menu_load.instance()
 	add_child(cursor_menu)
@@ -151,4 +163,8 @@ func interact():
 	var pos = $Background.get_local_mouse_position()
 	var img = $Background/Height.texture.get_data()
 	img.lock()
-	print(round(img.get_pixel(pos.x, pos.y)[0] * 255))
+	var height = round(img.get_pixel(pos.x, pos.y)[0] * 255)
+	if height > 0:
+		var path = $Navigation2D.get_simple_path(pos_player, pos)
+		pos_player = pos
+		$Background/Node2D.path = path
