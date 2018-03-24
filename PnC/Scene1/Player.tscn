@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scene1/Player.gd" type="Script" id=1]
+[ext_resource path="res://images/characters/player1.png" type="Texture" id=2]
+
+[node name="Player" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( -75, -300 )
+_sections_unfolded = [ "Offset" ]
+
+

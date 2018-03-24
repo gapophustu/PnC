@@ -1,0 +1,46 @@
+,en,de
+MENU_CONTINUE,Continue,Weiter
+MENU_NEW_GAME,New Game,Neues Spiel
+MENU_LOAD_GAME,Load Game,Spiel laden
+MENU_SAVE_GAME,Save Game,Spiel speichern
+MENU_INPUT,Input Settings,Eingabeeinstellungen
+MENU_DISPLAY,Display Settings,Anzeigeeinstellungen
+MENU_SOUND,Sound Settings,Toneinstellungen
+MENU_QUIT,Quit,Beenden
+,,
+MENU_BACK,Back,Zurück
+,,
+MENU_DELETE_SAVE,Delete Save,Speicherstand löschen
+MENU_OLDER,Older,Ältere
+MENU_NEWER,Newer,Neuere
+,,
+MENU_INPUT_TYPE,Input Type,Eingabetyp
+MENU_INPUT_TYPE_MOUSE,Default,Standard
+MENU_INPUT_TYPE_ONE_CLICK,One Click,Einkick
+MENU_INPUT_CAMERA_MODE,Camera Mode,Kameramodus
+MENU_INPUT_CAMERA_MODE_SCROLL,Scroll,Scrollen
+MENU_INPUT_CAMERA_MODE_FOLLOW_CURSOR,Follow Cursor,Cursor folgen
+MENU_INPUT_CAMERA_MODE_FOLLOW_CHARACTER,Follow Character,Charakter folgen
+MENU_INPUT_SKIP_DELAY,Skip Delay,Überspringungsverzögerung
+MENU_INPUT_CURSOR_SPEED,Cursor Speed,Cursorgeschwindigkeit
+,,
+MENU_DISPLAY_SCALE,Game scale,Spielskalierung
+MENU_FULLSCREEN,Fullscreen,Vollbild
+MENU_WINDOW_RESOLUTION,Window Resolution,Fensterauflösung
+MENU_TEXT_LANGUAGE,Text language,Textsprache
+MENU_SUBTITLES,Subtitles,Untertitel
+MENU_TEXT_SIZE,Text Size,Textgröße
+MENU_HIGHLIGHT,Highlight Hotspots,Hotspots hervorheben
+,,
+MENU_SOUND_LANGUAGE,Sound language,Tonsprache
+MENU_SOUND_LANGUAGE_VOLUME,Language volume,Sprachlautstärke
+MENU_SOUND_MUSIC,Music volume,Musiklautstärke
+MENU_SOUND_BACKGROUND,Background volume,Hintergrundlautstärke
+MENU_SOUND_VIDEO,Video volume,Videolautstärke
+MENU_SOUND_MASTER,Master volume,Lautstärke
+,,
+,,
+,,
+,,
+WATCHSTAR_1,It is a star,Es ist ein Stern
+WATCHSTAR_2,It is sparkling,Er funkelt
